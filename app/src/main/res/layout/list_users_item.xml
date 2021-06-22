@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item"
+    android:background="?selectableItemBackground"
+    android:padding="@dimen/padding_10">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="@dimen/img_size_medium"
+        android:layout_height="@dimen/img_size_medium"
+        android:layout_gravity="center"
+        app:civ_border_color="#56ffffff"
+        app:civ_border_width="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_name"
+            style="@style/SemiBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center_vertical|right"
+            android:maxLines="1"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading" />
+
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center_vertical|right"
+            android:maxLines="1"
+            android:padding="@dimen/padding_2"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/txt_subheading" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/ln_add"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbl_add"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_playground_add"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_headline" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_add"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/icon_football_field_new" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Horizontal_No_Margin"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator" />
+
+    <LinearLayout
+        android:id="@+id/ln_manage_bookings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbl_manage"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ادارة الحجوزات"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_headline" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_2">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/btn_manage"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_margin="@dimen/margin_5"
+                android:background="@null"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_5"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/icon_calendar" />
+
+            <com.malaab.ya.action.actionyamalaab.owner.custom.CircularTextView
+                android:id="@+id/txt_notificationCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/padding_2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_caption"
+                android:visibility="gone"
+                app:cSolidColor="@color/red"
+                app:cStrokeColor="@color/white"
+                app:cStrokeWidth="1" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Horizontal_No_Margin"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator" />
+
+    <LinearLayout
+        android:id="@+id/ln_manage_playgrounds"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbl_manage_playground"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ادارة الملاعب"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_headline" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_manage_playground"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/icon_football_field" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Horizontal_No_Margin"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator" />
+
+    <LinearLayout
+        android:id="@+id/ln_attendance"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbl_attendance"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الحضور والدفع"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_headline" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_attendance"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/icon_wallet" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Separator_Horizontal_No_Margin"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator" />
+
+    <LinearLayout
+        android:id="@+id/ln_logout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbl_logout"
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تسجيل الخروج"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/txt_headline" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_logout"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@null"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/icon_logout" />
+
+    </LinearLayout>
+
+</LinearLayout>

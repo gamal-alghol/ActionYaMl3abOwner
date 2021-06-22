@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bSheet_playground_schedule"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/dialog_btn_close"
+            android:layout_width="@dimen/icon_size_medium"
+            android:layout_height="@dimen/icon_size_medium"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_5"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_5"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon_close" />
+
+        <TextView
+            android:id="@+id/dialog_txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_10"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/title"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_title" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/nsc_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_saveSchedule"
+        android:layout_below="@+id/rl_header"
+        android:background="@color/white"
+        android:visibility="visible">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/padding_10">
+
+            <TextView
+                android:id="@+id/lbl_day"
+                style="@style/Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/day"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txt_subheading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ln_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/lbl_day"
+                app:layout_constraintStart_toStartOf="@id/lbl_day"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_day">
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:background="@null"
+                    android:clickable="false"
+                    android:contentDescription="@string/content_description"
+                    android:padding="@dimen/padding_2"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/icon_arrow_down" />
+
+                <com.malaab.ya.action.actionyamalaab.owner.custom.CustomSpinner
+                    android:id="@+id/sp_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_region"
+                style="@style/Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_25"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/title_playground_size"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txt_subheading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ln_days" />
+
+            <LinearLayout
+                android:id="@+id/ln_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/lbl_region"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_region">
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:background="@null"
+                    android:clickable="false"
+                    android:contentDescription="@string/content_description"
+                    android:padding="@dimen/padding_3"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/header_btn_notifications"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_arrow_down" />
+
+                <TextView
+                    android:id="@+id/txt_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_5"
+                    android:text="@string/title_playground_size"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/txt_subheading" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_duration"
+                style="@style/Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/duration"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txt_subheading"
+                app:layout_constraintStart_toStartOf="@id/lbl_region"
+                app:layout_constraintTop_toBottomOf="@id/ln_size" />
+
+            <LinearLayout
+                android:id="@+id/ln_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/lbl_region"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_duration">
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:background="@null"
+                    android:clickable="false"
+                    android:contentDescription="@string/content_description"
+                    android:padding="@dimen/padding_3"
+                    android:scaleType="fitCenter"
+                    android:tint="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/header_btn_notifications"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_arrow_down" />
+
+                <TextView
+                    android:id="@+id/txt_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_5"
+                    android:text="@string/duration"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/txt_subheading" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_time"
+                style="@style/Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/operation_hours"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txt_subheading"
+                app:layout_constraintStart_toStartOf="@id/lbl_region"
+                app:layout_constraintTop_toBottomOf="@id/ln_duration" />
+
+            <LinearLayout
+                android:id="@+id/ln_from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@drawable/layout_border_full_grey"
+                app:layout_constraintEnd_toStartOf="@id/ln_to"
+                app:layout_constraintStart_toStartOf="@id/lbl_region"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_time">
+
+                <TextView
+                    android:id="@+id/lbl_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:text="من"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/txt_title" />
+
+                <TextView
+                    android:layout_width="0.7dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:background="@color/gray_transparent" />
+
+                <EditText
+                    android:id="@+id/edt_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:focusable="false"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="@dimen/padding_10"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="@id/lbl_from"
+                    app:layout_constraintStart_toEndOf="@id/lbl_from"
+                    app:layout_constraintTop_toTopOf="@id/lbl_from"
+                    tools:ignore="LabelFor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:background="@drawable/layout_border_full_grey"
+                android:focusable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ln_from"
+                app:layout_constraintTop_toTopOf="@+id/ln_from">
+
+                <TextView
+                    android:id="@+id/lbl_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:text="الى"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/txt_title" />
+
+                <TextView
+                    android:layout_width="0.7dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:background="@color/gray_transparent" />
+
+                <EditText
+                    android:id="@+id/edt_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:focusable="false"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="@dimen/padding_10"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="@id/lbl_from"
+                    app:layout_constraintStart_toEndOf="@id/lbl_from"
+                    app:layout_constraintTop_toTopOf="@id/lbl_from"
+                    tools:ignore="LabelFor" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lbl_price"
+                style="@style/Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ellipsize="end"
+                android:labelFor="@id/edt_price"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/title_price"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txt_subheading"
+                app:layout_constraintStart_toStartOf="@id/lbl_region"
+                app:layout_constraintTop_toBottomOf="@id/ln_to" />
+
+            <EditText
+                android:id="@+id/edt_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_15"
+                android:layout_marginStart="@dimen/margin_15"
+                android:background="@drawable/layout_border_full_grey"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:padding="@dimen/padding_10"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_price" />
+
+
+            <TextView
+                android:id="@+id/lbl_disableTimes"
+                style="@style/Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:ellipsize="end"
+                android:labelFor="@id/edt_price"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/title_disable_times"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txt_subheading"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/lbl_region"
+                app:layout_constraintTop_toBottomOf="@id/edt_price" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_times"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_15"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_disableTimes" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btn_saveSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="حفظ"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_title" />
+
+</RelativeLayout>

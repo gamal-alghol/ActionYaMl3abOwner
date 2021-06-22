@@ -1,0 +1,597 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sc_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/header">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_15"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="@string/playground_name"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/txt_subheading" />
+
+        <EditText
+            android:id="@+id/edt_playgroundName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:hint="@string/playground_name"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:lines="1"
+            android:longClickable="false"
+            android:paddingBottom="@dimen/padding_15"
+            android:paddingEnd="@dimen/padding_5"
+            android:paddingStart="@dimen/padding_5"
+            android:paddingTop="@dimen/padding_5"
+            android:textColor="@color/dark_gray"
+            android:textColorHint="@color/semi_gray"
+            android:textSize="@dimen/txt_title"
+            android:theme="@style/EditText" />
+
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="@string/title_region"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/txt_subheading" />
+
+        <LinearLayout
+            android:id="@+id/ln_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:background="@null"
+                android:clickable="false"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_3"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/header_btn_notifications"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_arrow_down" />
+
+            <TextView
+                android:id="@+id/txt_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_5"
+                android:text="@string/title_region"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_subheading" />
+
+        </LinearLayout>
+
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="@string/city"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/txt_subheading" />
+
+        <LinearLayout
+            android:id="@+id/ln_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:background="@null"
+                android:clickable="false"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_3"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/header_btn_notifications"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_arrow_down" />
+
+            <TextView
+                android:id="@+id/txt_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_5"
+                android:text="@string/city"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_subheading" />
+        </LinearLayout>
+
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="@string/direction"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/txt_subheading" />
+
+        <LinearLayout
+            android:id="@+id/ln_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:background="@null"
+                android:clickable="false"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_3"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/header_btn_notifications"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_arrow_down" />
+
+            <TextView
+                android:id="@+id/txt_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_5"
+                android:text="@string/direction"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_subheading" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ln_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_10"
+            android:background="@drawable/layout_border_full_grey"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingEnd="@dimen/padding_15"
+            android:paddingStart="@dimen/padding_15"
+            android:paddingTop="@dimen/padding_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:background="@null"
+                android:clickable="false"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_3"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/header_btn_notifications"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_location_details" />
+
+            <TextView
+                android:id="@+id/txt_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_5"
+                android:text="@string/add_playground_location"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_subheading" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ln_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@drawable/layout_border_full_grey"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingEnd="@dimen/padding_15"
+            android:paddingStart="@dimen/padding_15"
+            android:paddingTop="@dimen/padding_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:background="@null"
+                android:clickable="false"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_3"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/header_btn_notifications"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_add" />
+
+            <TextView
+                android:id="@+id/txt_images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_5"
+                android:text="@string/add_playground_images"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/txt_subheading" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5" />
+
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="@string/add_playground_amenities"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/txt_subheading" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesShower"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginStart="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_10"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_amenitiesWC"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/icon_shower" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesShower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Shower"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesShower"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesShower"
+                app:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <CheckBox
+                android:id="@+id/chk_amenitiesShower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesShower"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesShower"
+                app:layout_constraintTop_toBottomOf="@+id/txt_amenitiesShower" />
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesWC"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                app:layout_constraintEnd_toStartOf="@+id/btn_amenitiesGrass"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_amenitiesShower"
+                app:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                app:srcCompat="@drawable/icon_wc" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesWC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="WC"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesWC"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesWC"
+                app:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <CheckBox
+                android:id="@+id/chk_amenitiesWC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesWC"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesWC"
+                app:layout_constraintTop_toBottomOf="@+id/txt_amenitiesWC" />
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesGrass"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                app:layout_constraintEnd_toStartOf="@+id/btn_amenitiesWater"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_amenitiesWC"
+                app:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                app:srcCompat="@drawable/icon_grass" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesGrass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Grass"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesGrass"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesGrass"
+                app:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <CheckBox
+                android:id="@+id/chk_amenitiesGrass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesGrass"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesGrass"
+                app:layout_constraintTop_toBottomOf="@+id/txt_amenitiesGrass" />
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesWater"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                app:layout_constraintEnd_toStartOf="@+id/btn_amenitiesBall"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_amenitiesGrass"
+                app:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                app:srcCompat="@drawable/icon_water_bottle" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesWater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Water"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesWater"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesWater"
+                app:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <CheckBox
+                android:id="@+id/chk_amenitiesWater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesWater"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesWater"
+                app:layout_constraintTop_toBottomOf="@+id/txt_amenitiesWater" />
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_amenitiesBall"
+                android:layout_width="@dimen/icon_size_medium"
+                android:layout_height="@dimen/icon_size_medium"
+                android:layout_marginEnd="@dimen/margin_25"
+                android:contentDescription="@string/content_description"
+                android:padding="@dimen/padding_2"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_amenitiesShower"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_amenitiesWater"
+                app:layout_constraintTop_toTopOf="@+id/btn_amenitiesShower"
+                app:srcCompat="@drawable/icon_ball" />
+
+            <TextView
+                android:id="@+id/txt_amenitiesBall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Ball"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/txt_caption"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesBall"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesBall"
+                app:layout_constraintTop_toBottomOf="@+id/btn_amenitiesShower" />
+
+            <CheckBox
+                android:id="@+id/chk_amenitiesBall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/btn_amenitiesBall"
+                app:layout_constraintStart_toStartOf="@id/btn_amenitiesBall"
+                app:layout_constraintTop_toBottomOf="@+id/txt_amenitiesBall" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <TextView
+            style="@style/Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="@string/add_playground_schedule"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/txt_subheading" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/btn_addSchedule"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/margin_5"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/content_description"
+            android:padding="@dimen/padding_2"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon_add_circle" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15">
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/margin_15"
+                android:background="@drawable/btn_rounded_green"
+                android:drawablePadding="@dimen/padding_10"
+                android:drawableStart="@drawable/icon_checked"
+                android:padding="@dimen/padding_10"
+                android:paddingEnd="@dimen/padding_25"
+                android:paddingStart="@dimen/padding_25"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_title"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_15"
+                android:background="@drawable/btn_rounded_green"
+                android:drawableEnd="@drawable/icon_continue_arrow"
+                android:drawablePadding="@dimen/padding_10"
+                android:padding="@dimen/padding_10"
+                android:paddingEnd="@dimen/padding_25"
+                android:paddingStart="@dimen/padding_25"
+                android:text="@string/continuee"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_title"
+                android:visibility="visible" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>
